@@ -5,17 +5,29 @@ body{
   /* background-color: blanchedalmond; */
 }
 .App{
-  display: grid;
+  display: flex;
   place-items: center;
   height: 100vh;
+  flex-direction: column;
+}
+.title{
+  margin: 30px 0px;
+  height: 10vh;
+  width: 100%;
+  /* background-color: brown; */
+  /* align-items: center;
+  justify-content: center; */
+  place-items: center;
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .logIn{
-  width: 600px;
-  height: 200px;
+  width: 700px;
+  height: 500px;
   /* border: 5px solid rgb(199, 10, 246); */
-  border-radius: 20px;
-  /* display: grid;
+  border-radius: 5px;
+  /* display: grid; 
   place-items: center; */
   display: flex;
   flex-direction: column; 
@@ -23,6 +35,7 @@ body{
   align-items: center;
   box-shadow: 0 0 10px 2px rgb(195, 108, 216); 
   transition: box-shadow 0.3s ease-in-out;
+  background-color: rgb(242, 238, 242);
 }
 .logIn:hover {
   box-shadow: 0 0 20px 5px rgb(195, 108, 216); 
@@ -47,6 +60,83 @@ body{
   background-color: rgb(195, 108, 216);
 }
 
+.chatContainer{
+  width: 700px;
+  height: 500px;
+  /* border: 5px solid rgb(199, 10, 246); */
+  border-radius: 5px;
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  flex-direction: column; 
+  background-color: rgb(242, 238, 242);
+  
+  box-shadow: 0 0 10px 2px rgb(195, 108, 216); 
+  transition: box-shadow 0.3s ease-in-out;
+}
+.chatContainer:hover {
+  box-shadow: 0 0 20px 5px rgb(195, 108, 216); 
+}
 
+.chatContainer .messages{
+  flex: 90%;
+  width: 100%;
+  /* background-color: tomato; */
+}
+.chatContainer .messageInputs{
+  flex-direction: row;
+  flex:10%;
+  width: 100%;
+  border:none;
+  border-top: 1px solid rgb(195, 108, 216) ;
+  /* background-color: pink; */
+  
+}
 
+.messageIndividual{
+  width: 300px;
+  height: auto;
+  background-color: rgb(252, 221, 237);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  margin: 20px;
+  box-shadow: 0 0 5px 2px rgb(195, 108, 216);
+  display: grid;
+  place-items: center;
+}
 
+.messageContainer{
+  display: flex;
+}
+#Self{
+    justify-content: flex-start;
+}
+#Other{
+  justify-content: flex-end;
+}
+#Other .messageIndividual{
+  background-color: rgb(235, 139, 222);
+}
+
+/* scrolling */
+.messages{
+  max-height: 1000px; /* Set a maximum height for the div */
+  overflow-y: auto; /* Add vertical scroll */
+  overflow-x: hidden; /* Hide horizontal scroll if not needed */
+  padding: 5px; /* Optional: Add padding inside the div */
+}
+/* Hide scrollbar for Chrome, Safari, and newer versions of Edge */
+.messages::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge (older versions) */
+.messages {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Firefox */
+.messages {
+  scrollbar-width: none; /* Firefox */
+}
